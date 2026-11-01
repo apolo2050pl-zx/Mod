@@ -1,0 +1,27 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "luzviva"
+version = "1.0.0"
+displayName = "Luz Viva"
+authors = "Tu nombre"
+description = '''
+Todos los objetos que emiten luz se ven en 3D y tienen animacion.
+El Farol cuelga de una cadena sostenida en la mano y se balancea con tu movimiento.
+'''
+
+[[dependencies.luzviva]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.luzviva]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "CLIENT"
