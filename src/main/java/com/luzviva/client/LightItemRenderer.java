@@ -59,7 +59,7 @@ public class LightItemRenderer extends BlockEntityWithoutLevelRenderer {
     }
 
     public LightItemRenderer() {
-        super(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModelSet());
+        super(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels());
     }
 
     @Override
