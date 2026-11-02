@@ -1,5 +1,7 @@
 package com.luzviva.client;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -12,13 +14,13 @@ public final class LightItems {
     private LightItems() {
     }
 
-    /**
-     * Un objeto emite luz si es un BlockItem cuyo bloque (en su estado por defecto)
-     * tiene nivel de luz > 0 y se dibuja con un modelo normal.
-     * Los bloques con renderizado propio (cofre del Ender, conducto...) se dejan como en vanilla.
-     */
     public static boolean isLightItem(Item item) {
         if (!(item instanceof BlockItem blockItem)) {
+            return false;
+        }
+        // Solo objetos de Minecraft vanilla: otros mods ya registran su propio renderer
+        ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
+        if (!"minecraft".equals(id.getNamespace())) {
             return false;
         }
         Block block = blockItem.getBlock();
